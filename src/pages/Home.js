@@ -89,9 +89,6 @@ class Home extends Component {
         <h1 className='header1'>Simi</h1>
         <Button className='btun' onClick={this.showNew} >Create New Room</Button>
         <Button className='btun' onClick={this.showExist}> Join Existing Room </Button>
-        <Link to='/room'> This is the link to the room </Link>
-        <Link to='/choose'> This is the link to the choose </Link>
-        <Link to='/score'> This is the link to the ScoreBoard </Link>
 
         {this.renderExistForm()}
         {this.renderNewRoom()}

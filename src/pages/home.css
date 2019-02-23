@@ -8,10 +8,14 @@
 }
 
 .home .btun {
-  width: 80%;
+  width: 100%;
+  height: 70px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 
 .home .header1{

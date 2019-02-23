@@ -15,11 +15,15 @@ class InputLine extends Component {
     console.log(this.state.payload)
     if (this.props.new) {
       console.log('New room')
+      //send stuff to api
       let payload = this.state.payload
       payload.replace(/ /g, '-')
       this.setState({payload: payload, redirect:true})
     } else {
       console.log('Join room')
+      let payload = this.state.payload
+      payload.replace(/ /g, '-')
+      this.setState({payload: payload, redirect:true})
     }
   }
   handleText(e) {

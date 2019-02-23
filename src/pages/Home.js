@@ -17,7 +17,7 @@ class Home extends Component {
     this.showNew = this.showNew.bind(this)
     this.hideNew = this.hideNew.bind(this)
   }
-
+  
   showExist() {
     console.log("Hi")
     this.setState({joinExist: true})

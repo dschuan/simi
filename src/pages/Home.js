@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+import {Button, Modal} from 'react-bootstrap';
 
+import './home.css'
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -12,21 +13,44 @@ class Home extends Component {
   }
 
   showExist() {
-    this.setState({joinExist: true})
+    this.setState({joinExist: !this.state.joinExist})
   }
 
   renderExistForm() {
     return (
-      <div>
-      </div>
+      <Modal
+        show={this.state.joinExist}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Create a Room</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+            ac consectetur ac, vestibulum at eros.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.joinExist}>Close</Button>
+        </Modal.Footer>
+      </Modal>
     )
   }
+
+
   render() {
     return (
-      <div>
+      <div className='home'>
         <h1>Simi</h1>
-        <Button>Create New Lobby</Button>
-        <Button onClick={this.showExist}> Join Existing Lobby </Button>
+        <Button className='button'>Create New Room</Button>
+        <Button className='button' onClick={this.showExist}> Join Existing Room </Button>
         <Link to='/room'> This is the link to the room </Link>
       </div>
     );

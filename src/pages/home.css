@@ -1,4 +1,11 @@
 .home {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+}
+
+.home .button {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }

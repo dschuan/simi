@@ -20,9 +20,16 @@
   height: 100px;
   border-radius: 50px;
   text-align: center;
-  background-color:#ffffff;
   font-size: 24px;
   margin-top: 40%;
+}
+
+.recordon {
+  background:#007bff;
+}
+
+.recordoff {
+  background:#ffffff;
 }
 
 .submitbutton {

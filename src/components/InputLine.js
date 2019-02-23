@@ -37,14 +37,14 @@ class InputLine extends Component {
   }
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.submitAction}>
         <Form.Group controlId={this.props.id}>
           <Form.Control
           type="text"
           placeholder={this.props.placeholder}
           onChange={this.handleText}/>
         </Form.Group>
-        <Button variant="primary" onClick={this.submitAction}>
+        <Button variant="primary" type="submit">
           {this.props.buttonText}
         </Button>
         {this.renderRedirect()}

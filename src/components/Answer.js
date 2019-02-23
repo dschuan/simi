@@ -14,7 +14,7 @@ class Answer extends Component {
   changeScreen() {
     setTimeout(() => {
       this.props.changeStatus(5)
-    }, 2000)
+    }, 3000)
   }
   render() {
     return (

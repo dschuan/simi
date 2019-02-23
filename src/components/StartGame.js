@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ChooseGM from './ChooseGM';
+import InputParent from './InputParent';
 
 class StartGame extends Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class StartGame extends Component {
       case 0:
         return <ChooseGM users={this.props.users} changeStatus={this.changeStatus} changeGM={this.changeGM}/>
       case 1:
-        return <p> Case 1, {this.state.gm} </p>
+        return <InputParent changeStatus={this.changeStatus} gm={this.state.gm} />
+      case 2:
+        return <p>Case 3</p>
       default:
         return <p>Nothing</p>
     }

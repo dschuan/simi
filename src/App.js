@@ -17,7 +17,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/room" component={Room} />
+          <Route path="/room/:id" component={Room} />
           <Route path="/choose" component={Choose} />
 
           <Route path="/score" component={ScoreBoard} />
@@ -25,7 +25,6 @@ class App extends Component {
           <Route path="/gminputtext" component={GmInputText} />
           <Route path="/answer" component={Answer} />
 
-          <Route path="/blah/:id" component={Room} />
         </Switch>
       </Router>
     );

@@ -3,9 +3,9 @@
   flex-direction: column;
 }
 
-.home .button {
-  width: 30%;
-  margin-left: auto;
+.home .btun {
+  width: 80%;
   margin-right: auto;
-  margin-top: 20px;
+  margin-left: auto;
+  margin-top: 3%;
 }

@@ -20,10 +20,14 @@ class GmInputAudio extends Component {
   }
 
   toggleRecording = () => {
-    if (this.state.isRecording==true){
+    if (this.state.isRecording){
       this.setState({
         isRecording: false,
       });
+
+      setTimeout(() => {
+        this.props.changeStatus(2)
+      }, 1000)
     } else {
       this.setState({
         isRecording: true,

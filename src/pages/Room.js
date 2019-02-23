@@ -7,6 +7,7 @@ import UserName from '../components/UserName';
 //import Home from './Home'
 
 import './room.css';
+import { room_namelist,connect,join_room } from '../api'
 
 class Room extends Component {
   constructor(props) {
@@ -38,6 +39,18 @@ class Room extends Component {
         this.setState({users : names})
       }
     }
+
+    //websocket call to update room namelist on member join
+    room_namelist(msg => {
+      var room_name = this.props.match.url
+     var users = msg.data.rooms[room_name].users
+     var names = []
+     for (var i = 0; i < users.length; i++) {
+       names.push(users[i].name)
+     }
+     this.setState({users:names});
+    });
+
   }
 
   startGame() {
@@ -71,7 +84,7 @@ class Room extends Component {
         return <StartGame users={this.state.users} />
       case 3:
         //key in username
-        return <UserName changeStatus={this.changeStatus}/>
+        return <UserName match={this.props.match} changeStatus={this.changeStatus}/>
       default:
         return <p> Error in Loading, refresh the page </p>
     }

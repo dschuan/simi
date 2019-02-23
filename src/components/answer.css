@@ -1,0 +1,26 @@
+.answer {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffbf00;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+.answer .header1{
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.answer .audio{
+  margin-top: 50%;
+  display: none;
+}
+
+.answer .header2{
+  margin-top: 20%;
+  text-align:center;
+  font-family: 'Source Code Pro', monospace;
+  color:black;
+}

@@ -25,9 +25,9 @@ class GmInputAudio extends Component {
         isRecording: false,
       });
 
-      setTimeout(() => {
-        this.props.changeStatus(2)
-      }, 1000)
+      // setTimeout(() => {
+      //   this.props.changeStatus(2)
+      // }, 1000)
     } else {
       this.setState({
         isRecording: true,
@@ -36,36 +36,6 @@ class GmInputAudio extends Component {
   }
 
   onSave=(blobObject) => {
-    var fd = new FormData();
-    var url = "http://192.168.43.8:5000/uploadfile";
-    fd.append('file', blobObject, "voice.webm");
-    console.log("Sending file");
-
-    var request = new XMLHttpRequest();
-    request.open("POST", url);
-    request.send(fd);
-
-
-    // fetch('http://192.168.43.8:5000/')
-    // .then(results => {
-    //   results.json();
-    // }).then(function(data){
-    //   console.log('Get succeeded', data);
-    // });
-    //
-    // fetch('http://192.168.43.8:5000/uploadfile', {
-    //   method: 'POST',
-    //   body: fd
-    // })
-    // .then((resp) => resp.json())
-    // .then(function (data) {
-    //   console.log('Request succeeded with JSON response', data);
-    // })
-    // .catch(function (error) {
-    //   console.log('Request failed', error);
-    // });
-
-    console.log("fetch command executed")
 
   }
 
@@ -77,6 +47,27 @@ class GmInputAudio extends Component {
     this.setState({
       blobURL : blobObject.blobURL
     });
+    console.log(blobObject.blob);
+    var fd = new FormData();
+    var url = "http://192.168.43.8:5000/uploadfile";
+    fd.append('file', blobObject.blob, "voice.webm");
+    fd.append('title', "titleeee");
+    console.log(fd);
+
+    fetch('http://192.168.43.8:5000/uploadfile', {
+      method: 'POST',
+      body: fd,
+      "mode":"no-cors",
+    })
+    .then((resp) => resp.json())
+    .then(function (data) {
+      console.log('Request succeeded with JSON response', data);
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });
+
+    console.log("fetch command executed")
   }
 
   onData(recordedBlob){
@@ -103,7 +94,7 @@ class GmInputAudio extends Component {
             onData={this.onData}
             strokeColor="#ffffff" />
 
-        <audio className="center" ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
+        <audio className="center" ref="audioSource" controls="controls" src={this.state.blobURL}></audio>>
         <h5 className="center black">{this.state.blobURL}</h5>
         <button onClick={this.toggleRecording} type="button" className={this.state.isRecording ? 'recordbtn recordon center' : 'recordbtn recordoff center'}>
           <MaterialIcon icon="mic_none" size={60} color='#f2f2f2' />

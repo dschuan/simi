@@ -12,10 +12,12 @@ class Choose extends Component {
       answers: [["De sheng", "Answer 1"], ["Crystal", "Answer 2"], ["Adna", "Answer 3"]],
       timerDone: false,
     }
+    this.timerComplete = this.timerComplete.bind(this)
 
   }
   timerComplete(){
     this.setState({timerDone: true})
+    this.props.changeStatus(4)
   }
 
 
@@ -36,7 +38,7 @@ class Choose extends Component {
           {buttonAnswers}
         </ToggleButtonGroup>
         <div className='timer'>
-          <CountDownTimer/>
+          <CountDownTimer timerComplete={this.timerComplete}/>
         </div>
       </div>
     );

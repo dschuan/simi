@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import './home.css';
 
 class Home extends Component {
   constructor(props) {
@@ -18,12 +19,13 @@ class Home extends Component {
   renderExistForm() {
     return (
       <div>
+
       </div>
     )
   }
   render() {
     return (
-      <div>
+      <div className='home'>
         <h1>Simi</h1>
         <Button>Create New Lobby</Button>
         <Button onClick={this.showExist}> Join Existing Lobby </Button>

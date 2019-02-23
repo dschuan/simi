@@ -5,14 +5,20 @@ import './input.css'
 class GmInputText extends Component {
   constructor(props) {
     super(props);
-    const gm = this.props.isGm ? 'You' : this.props.gm
+
     this.state = {
-      question: `What would ${gm} say when asking a girl out?`,// props.question, //string
+      question: '',// props.question, //string
       answer: ''
     }
     this.onChange = this.onChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
+  }
+
+  componentDidMount() {
+    console.log(this.props.gm)
+    const gm = this.props.isGm ? 'You' : this.props.gm
+    this.setState({question: `What would ${gm} say to attract a girl?`})
   }
   onChange(e) {
     this.setState({answer: e.target.value})
@@ -31,7 +37,6 @@ class GmInputText extends Component {
 
   }
   render() {
-
     return (
 
       <div className='background'>

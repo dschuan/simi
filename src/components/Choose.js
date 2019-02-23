@@ -9,15 +9,30 @@ class Choose extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answers: [["De sheng", "Answer 1"], ["Crystal", "Answer 2"], ["Adna", "Answer 3"]],
+      answers: [],
       timerDone: false,
+      selected: ''
     }
+    this.timerComplete = this.timerComplete.bind(this)
+    this.handleSelection = this.handleSelection.bind(this)
 
   }
+
   timerComplete(){
     this.setState({timerDone: true})
+    this.props.changeStatus(4)
   }
 
+  handleSelection(e) {
+    this.setState({selected: e})
+  }
+
+  componentDidMount() {
+    //update answers here
+    this.setState({
+        answers: [["De sheng", "Answer 1"], ["Crystal", "Answer 2"], ["Adna", "Answer 3"]],
+    })
+  }
 
   render() {
     let buttonAnswers = [];
@@ -27,16 +42,15 @@ class Choose extends Component {
       )
     }
 
-    const Completionist = () => <span>Submitted!</span>;
-
     return (
       <div className='choose'>
-        <h1 className='header1'>What would derp say when asking a girl out?</h1>
-        <ToggleButtonGroup vertical className='choose' name="options">
+        <h1 className='header1'>What would {this.props.gm} say when asking a girl out?</h1>
+        <ToggleButtonGroup onChange={this.handleSelection} vertical className='choose' name="options">
           {buttonAnswers}
         </ToggleButtonGroup>
+        {this.state.answers.length === 0 ? '' : 'An answer is selected liao'}
         <div className='timer'>
-          <CountDownTimer/>
+          <CountDownTimer timerComplete={this.timerComplete}/>
         </div>
       </div>
     );

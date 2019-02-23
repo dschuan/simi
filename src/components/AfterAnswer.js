@@ -9,6 +9,7 @@ class AfterAnswer extends Component {
       timerDone: false,
       waitingFor: []
     }
+    this.timerComplete = this.timerComplete.bind(this)
   }
   componentDidMount() {
     this.setState({waitingFor: this.props.users})
@@ -16,6 +17,7 @@ class AfterAnswer extends Component {
 
   timerComplete(){
     this.setState({timerDone: true})
+    this.props.changeStatus(3)
   }
 
   render() {
@@ -23,7 +25,7 @@ class AfterAnswer extends Component {
       <div>
         <h4>Waiting for these slowpokes</h4>
         <div className='timer'>
-          <CountDownTimer/>
+          <CountDownTimer timerComplete={this.timerComplete}/>
         </div>
       </div>
     );

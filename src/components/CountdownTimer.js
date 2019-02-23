@@ -23,6 +23,7 @@ class Countdown extends Component {
 
   stop() {
     clearInterval(this.interval);
+    this.props.timerComplete();
   }
 
   render() {

@@ -32,7 +32,7 @@ class InputLine extends Component {
 
   renderRedirect() {
     if (this.state.redirect) {
-      return <Redirect to={`/blah/${this.state.payload}`} />
+      return <Redirect to={`/room/${this.state.payload}`} />
     }
   }
   render() {

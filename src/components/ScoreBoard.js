@@ -1,39 +1,34 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import './scoreboard.css'
 
-import './home.css'
-class Scoreboard extends Component {
+class ScoreBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      score: props.score, // array
+      score: [["Desheng", 15],["Caleb", 10], ["Yongkeat", 10], ["Adna", 10]],// props.score, // array
     }
+
+  }
+
+  render() {
     let rows = [];
     for (var i = 0; i < this.state.score.length; i++){
-      <tr>
-        <td>
-      </tr>
+      rows.push(
+        <tr className="scoreboardrow">
+          {i==0 ? <td id="iconcell"><img id="winnericon" src="/apruss.png"/></td> : <td id="iconcell"></td>}
+          <td className="namecell">{this.state.score[i][0]}</td>
+          <td className="scorecell">{this.state.score[i][1]}</td>
+        </tr>
+      )
     }
-    this.showExist = this.showExist.bind(this)
-  }
-
-  showExist() {
-    this.setState({joinExist: true})
-  }
-
-
-  renderExistForm() {
     return (
-      <div>
-      </div>
-    )
-  }
-  render() {
-    return (
+
       <div className='home'>
-        <h1>SCOREBOARD</h1>
-        <table id="scoretable">
+        <h1 id="scoreboardh1" className="white">SCOREBOARD</h1>
+        <h5 className="center white">let's see how zai you are</h5>
+        <table className="center">
           <tbody>
             {rows}
           </tbody>
@@ -44,4 +39,4 @@ class Scoreboard extends Component {
   }
 }
 
-export default Scoreboard;
+export default ScoreBoard;

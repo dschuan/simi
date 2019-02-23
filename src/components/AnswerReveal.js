@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Button, ButtonGroup, ToggleButton, ButtonToolbar, ToggleButtonGroup} from 'react-bootstrap';
 import Countdown from 'react-countdown-now';
-import CountDownTimer from './CountdownTimer'
 
-import './choose.css';
+import './choose.css'
 class Choose extends Component {
   constructor(props) {
     super(props);
     this.state = {
       answers: [["De sheng", "Answer 1"], ["Crystal", "Answer 2"], ["Adna", "Answer 3"]],
-      timerDone: false,
+
     }
-
-  }
-  timerComplete(){
-    this.setState({timerDone: true})
   }
 
-
+  renderExistForm() {
+    return (
+      <div>
+      </div>
+    )
+  }
   render() {
     let buttonAnswers = [];
     for (var i = 0; i < this.state.answers.length; i++){
@@ -35,9 +35,10 @@ class Choose extends Component {
         <ToggleButtonGroup vertical className='choose' name="options">
           {buttonAnswers}
         </ToggleButtonGroup>
-        <div className='timer'>
-          <CountDownTimer/>
-        </div>
+        <Countdown className='timer' date={Date.now() + 10000} intervalDelay={0} precision={3}
+          renderer={props => <div className='timer'>{props.seconds} <Completionist/></div>}>
+
+        </Countdown>
       </div>
     );
   }

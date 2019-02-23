@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home .btun {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3%;
+}

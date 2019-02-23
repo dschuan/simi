@@ -1,0 +1,44 @@
+.choose {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffbf00;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.choose .header1{
+  width: 100%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.choose .button {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.choose .togglebutton {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+}
+.choose .mt-3{
+  margin-top: ($spacer-y) !important;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.choose .timer{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
+  text-align: center;
+  font-size: 50px;
+}

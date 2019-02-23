@@ -1,0 +1,52 @@
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+.background {
+  color: #ffbf00;
+}
+
+.toptext {
+  padding: 10%;
+  text-align: center;
+}
+
+.recordbtn {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 40%;
+}
+
+.recordon {
+  background:#007bff;
+}
+
+.recordoff {
+  background:#ffffff;
+}
+
+.submitbutton {
+  margin-top: 10%;
+}
+
+.answerinput {
+  width: 80%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  text-align: center;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.black {
+  color: #000000;
+}

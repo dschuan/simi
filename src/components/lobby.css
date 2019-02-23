@@ -1,0 +1,27 @@
+.lobby {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.lobby .header1{
+  text-align: center;
+}
+.lobby .image{
+  height: 60px;
+  width: 60px;
+}
+.lobby .card{
+  flex-direction:row;
+  background-color: transparent;
+  border: none;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.lobby .name{
+  font-size: 30px;
+  padding-left: 20px;
+  padding-top: 11px;
+}

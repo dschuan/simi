@@ -1,6 +1,10 @@
 .home {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
 }
 
 .home .btun {
@@ -8,4 +12,9 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 3%;
+}
+
+.home .header1{
+  text-align: center;
+
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import CountDownTimer from './CountdownTimer'
 
+import './choose.css';
 class AfterAnswer extends Component {
   constructor(props) {
     super(props);
@@ -22,8 +23,8 @@ class AfterAnswer extends Component {
 
   render() {
     return (
-      <div>
-        <h4>Waiting for these slowpokes</h4>
+      <div className='choose'>
+        <h4>Aiya, mai tu liao</h4>
         <div className='timer'>
           <CountDownTimer timerComplete={this.timerComplete}/>
         </div>

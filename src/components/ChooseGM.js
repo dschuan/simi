@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 class ChooseGM extends Component {
   constructor(props) {
     super(props);
-    this.state = {users: this.props.users, gm: ''}
+    this.state = {users: this.props.users, gm: this.props.users[0]}
   }
 
   componentDidMount() {
@@ -16,7 +16,7 @@ class ChooseGM extends Component {
     setTimeout(() => {
       this.props.changeStatus(1)
       this.props.changeGM(this.state.gm)
-    }, 2000)
+    }, 1000)
   }
   render() {
     return (

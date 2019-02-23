@@ -9,9 +9,12 @@ class ScoreBoard extends Component {
     this.state = {
       score: [["Desheng", 15],["Caleb", 10], ["Yongkeat", 10], ["Adna", 10]],// props.score, // array
     }
-
+    this.clickHandler = this.clickHandler.bind(this)
   }
-
+  clickHandler() {
+    this.props.changeGM('');
+    this.props.changeStatus(0);
+  }
   render() {
     let rows = [];
     for (var i = 0; i < this.state.score.length; i++){
@@ -33,7 +36,8 @@ class ScoreBoard extends Component {
             {rows}
           </tbody>
         </table>
-        <Link to='/room'> This is the link to the room </Link>
+        <Button onClick={this.clickHandler}> Next Round </Button>
+        <Link to="/"> Quit </Link>
       </div>
     );
   }

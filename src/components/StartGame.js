@@ -4,6 +4,8 @@ import ChooseGM from './ChooseGM';
 import InputParent from './InputParent';
 import AfterAnswer from './AfterAnswer';
 import Choose from './Choose';
+import Answer from './Answer';
+import ScoreBoard from './ScoreBoard';
 
 class StartGame extends Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class StartGame extends Component {
     this.setState({status: num})
   }
   changeGM(gm) {
+    console.log(gm)
     this.setState({gm: gm})
   }
   renderMain() {
@@ -27,9 +30,11 @@ class StartGame extends Component {
       case 2:
         return <AfterAnswer changeStatus={this.changeStatus} />
       case 3:
-        return <Choose changeStatus={this.changeStatus}/>
+        return <Choose changeStatus={this.changeStatus} gm={this.state.gm}/>
       case 4:
-        return <p>4</p>
+        return <Answer changeStatus={this.changeStatus} gm={this.state.gm}/>
+      case 5:
+        return <ScoreBoard changeStatus={this.changeStatus} changeGM={this.changeGM} />
       default:
         return <p>Nothing</p>
     }

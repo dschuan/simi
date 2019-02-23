@@ -11,7 +11,11 @@ class Answer extends Component {
       blobURL: "/audiotest.webm"
     }
   }
-
+  changeScreen() {
+    setTimeout(() => {
+      this.props.changeStatus(5)
+    }, 2000)
+  }
   render() {
     return (
       <div className='answer'>
@@ -24,6 +28,7 @@ class Answer extends Component {
           <source src={this.state.blobURL}/>
           </audio>
         </div>
+        {this.changeScreen()}
       </div>
     );
   }

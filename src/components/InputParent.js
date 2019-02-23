@@ -24,6 +24,7 @@ class InputParent extends Component {
   }
   renderMain() {
     console.log(this.state.user)
+    console.log(this.props.gm)
     const user = this.state.user
     if (user === this.props.gm) {
       return <div>{this.GmAnswer()}</div>

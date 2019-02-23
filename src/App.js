@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './pages/Home'
 import Room from './pages/Room'
@@ -10,10 +10,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/room" component={Room} />
-        </div>
+        </Switch>
       </Router>
     );
   }

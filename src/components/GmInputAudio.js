@@ -22,16 +22,47 @@ class GmInputAudio extends Component {
   toggleRecording = () => {
     if (this.state.isRecording==true){
       this.setState({
-        isRecording: false
+        isRecording: false,
       });
     } else {
       this.setState({
-        isRecording: true
+        isRecording: true,
       });
     }
   }
 
   onSave=(blobObject) => {
+    var fd = new FormData();
+    var url = "http://192.168.43.8:5000/uploadfile";
+    fd.append('file', blobObject, "voice.webm");
+    console.log("Sending file");
+
+    var request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.send(fd);
+
+
+    // fetch('http://192.168.43.8:5000/')
+    // .then(results => {
+    //   results.json();
+    // }).then(function(data){
+    //   console.log('Get succeeded', data);
+    // });
+    //
+    // fetch('http://192.168.43.8:5000/uploadfile', {
+    //   method: 'POST',
+    //   body: fd
+    // })
+    // .then((resp) => resp.json())
+    // .then(function (data) {
+    //   console.log('Request succeeded with JSON response', data);
+    // })
+    // .catch(function (error) {
+    //   console.log('Request failed', error);
+    // });
+
+    console.log("fetch command executed")
+
   }
 
   onStart=() => {
@@ -59,7 +90,7 @@ class GmInputAudio extends Component {
         <ReactMic
             className="oscilloscope"
             record={this.state.isRecording}
-            backgroundColor="#FF4081"
+            backgroundColor="#ffbf00"
             visualSetting="sinewave"
             audioBitsPerSecond= {128000}
             onStop={this.onStop}
@@ -70,8 +101,8 @@ class GmInputAudio extends Component {
 
         <audio className="center" ref="audioSource" controls="controls" src={this.state.blobURL}></audio>
         <h5 className="center black">{this.state.blobURL}</h5>
-        <button onClick={this.toggleRecording} type="button" className="recordbtn center">
-          <MaterialIcon icon="mic_none" size={60} />
+        <button onClick={this.toggleRecording} type="button" className={this.state.isRecording ? 'recordbtn recordon center' : 'recordbtn recordoff center'}>
+          <MaterialIcon icon="mic_none" size={60} color='#f2f2f2' />
         </button>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mtl from '../assets/maituliao.gif';
 
 import CountDownTimer from './CountdownTimer'
 
@@ -24,7 +25,7 @@ class AfterAnswer extends Component {
   render() {
     return (
       <div className='choose'>
-        <h4>Aiya, mai tu liao</h4>
+        <img src={mtl}/>
         <div className='timer'>
           <CountDownTimer timerComplete={this.timerComplete}/>
         </div>

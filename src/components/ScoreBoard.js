@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+import {Button, Card} from 'react-bootstrap';
 import './scoreboard.css'
 
 class ScoreBoard extends Component {
@@ -19,25 +19,22 @@ class ScoreBoard extends Component {
     let rows = [];
     for (var i = 0; i < this.state.score.length; i++){
       rows.push(
-        <tr className="scoreboardrow">
-          {i==0 ? <td id="iconcell"><img id="winnericon" src="/apruss.png"/></td> : <td id="iconcell"></td>}
-          <td className="namecell">{this.state.score[i][0]}</td>
-          <td className="scorecell">{this.state.score[i][1]}</td>
-        </tr>
+        <Card className='card'>
+          <Card.Img className='image'variant="left" src="/avatars/avatar1.png"/>
+          <Card.Title className='name'> {this.state.score[i][0]} </Card.Title>
+          <Card.Title className='score'>{this.state.score[i][1]}</Card.Title>
+        </Card>
+
       )
     }
     return (
 
-      <div className='home'>
+      <div className='scoreboard'>
         <h1 id="scoreboardh1" className="white">SCOREBOARD</h1>
-        <h5 className="center white">let's see how zai you are</h5>
-        <table className="center">
-          <tbody>
-            {rows}
-          </tbody>
-        </table>
-        <Button onClick={this.clickHandler}> Next Round </Button>
-        <Link to="/"> Quit </Link>
+        <h5 id="subtitle" className="center white">Come see how zai you are</h5>
+          {rows}
+        <Button id="nextroundbtn" onClick={this.clickHandler}> Next Round </Button>
+        <Link id="quitbtn" className="center" to="/"> Quit </Link>
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import gm from '../assets/gm.gif';
 
 
-
+import './choose.css';
 class ChooseGM extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ class ChooseGM extends Component {
       <div>
         <h1>{this.state.gm}</h1>
         <p> is the GM!</p>
+        <img className="gif" src={gm}/>
         {this.changeStatus()}
       </div>
     );

@@ -24,7 +24,7 @@ class Room extends Component {
 
   componentDidMount() {
     //get user list
-    let names = ['A', 'B', 'C']
+    let names = ['Amy', 'Benedict', 'Cody']
     //get user name
     const name = sessionStorage.getItem('name')
     this.setState({users: names})
@@ -62,7 +62,7 @@ class Room extends Component {
         return (
           <div className="parent">
             <Lobby users={this.state.users}/>
-            <Button onClick={this.startGame} > Start Game </Button>
+            <Button className="btun" onClick={this.startGame} > START GAME </Button>
 
           </div>
         )
@@ -81,8 +81,8 @@ class Room extends Component {
   render() {
     console.log(this.props.match.params.id)
     return (
-      <div>
-        <h2>{this.props.match.params.id} </h2>
+      <div className='room'>
+        <h5>Room: {this.props.match.params.id} </h5>
         {this.chooseRenderComponent()}
       </div>
     )

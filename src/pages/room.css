@@ -1,8 +1,17 @@
+.room {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
 .parent {
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .parent .lobby-user {
   width: 80%;
@@ -17,4 +26,15 @@
   font-size: 28px;
   margin-left: 10%;
   font-weight: 400;
+}
+
+.parent .btun {
+  width: 100%;
+  height: 70px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10%;
 }

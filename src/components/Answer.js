@@ -8,7 +8,7 @@ class Answer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      blobURL: "/audiotest.webm"
+      blobURL: "http://192.168.43.8:5000/sound/voice.webm"
     }
   }
 

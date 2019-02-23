@@ -8,6 +8,7 @@ import ScoreBoard from './components/ScoreBoard'
 import GmInputText from './components/GmInputText'
 import GmInputAudio from './components/GmInputAudio'
 import Answer from './components/Answer'
+import AfterAnswer from './components/AfterAnswer'
 
 import './App.css';
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/gminputaudio" component={GmInputAudio} />
           <Route path="/gminputtext" component={GmInputText} />
           <Route path="/answer" component={Answer} />
+          <Route path="/waiting" component={AfterAnswer} />
 
         </Switch>
       </Router>

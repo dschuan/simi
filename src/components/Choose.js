@@ -30,7 +30,7 @@ class Choose extends Component {
   componentDidMount() {
     //update answers here
     this.setState({
-        answers: [["De sheng", "Answer 1"], ["Crystal", "Answer 2"], ["Adna", "Answer 3"]],
+        answers: [["De sheng", "When you fell from heaven pain not? blah blah blah"], ["Crystal", "Ai stead mai?"], ["Adna", "I will cook, clean, wash dishes, massage you, give you breakfast in bed, ...., if you go out with me"]],
     })
   }
 
@@ -48,7 +48,7 @@ class Choose extends Component {
         <ToggleButtonGroup onChange={this.handleSelection} vertical className='choose' name="options">
           {buttonAnswers}
         </ToggleButtonGroup>
-        {this.state.answers.length === 0 ? '' : 'An answer is selected liao'}
+        {this.state.answers.length > 0 ? 'An answer is selected liao' : ''}
         <div className='timer'>
           <CountDownTimer timerComplete={this.timerComplete}/>
         </div>

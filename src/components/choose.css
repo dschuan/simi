@@ -15,15 +15,16 @@
 
 .choose .mt-3{
   margin-top: ($spacer-y) !important;
-  width: 70%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  font-size: 20px;
 }
 
 .choose .timer{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50%;
+  margin-top: 30%;
   text-align: center;
   font-size: 50px;
 }

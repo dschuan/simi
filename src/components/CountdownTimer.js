@@ -5,7 +5,7 @@ class Countdown extends Component {
     super(props);
 
     this.state = {
-      sec: 3,
+      sec: 10,
     }
   }
 

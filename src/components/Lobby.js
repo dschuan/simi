@@ -12,7 +12,6 @@ class Lobby extends Component {
         <Card id={user} className='lobby'>
           <Card.Img className='image'variant="left" src="/avatars/avatar1.png"/>
           <Card.Title className='name'> {user}</Card.Title>
-          <Card.Title className='score'>10</Card.Title>
         </Card>
       )
     })

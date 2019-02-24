@@ -86,12 +86,13 @@ class Home extends Component {
   render() {
     return (
       <div className='home'>
-        <h1 className='header1'>Simi</h1>
+        <img className="image" src='./gameLogo.png'/>
         <Button className='btun' onClick={this.showNew} >Create New Room</Button>
         <Button className='btun' onClick={this.showExist}> Join Existing Room </Button>
 
         {this.renderExistForm()}
         {this.renderNewRoom()}
+        <img id="logo" src='./AISingaporeLogo.png'/>
       </div>
     );
   }

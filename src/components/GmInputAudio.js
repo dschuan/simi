@@ -83,6 +83,7 @@ class GmInputAudio extends Component {
       <div className='background'>
         <h1 className="toptext center black">{this.state.answer}</h1>
         <ReactMic
+            id="waveform"
             className="oscilloscope"
             record={this.state.isRecording}
             backgroundColor="#ffbf00"
@@ -94,8 +95,7 @@ class GmInputAudio extends Component {
             onData={this.onData}
             strokeColor="#ffffff" />
 
-        <audio className="center" ref="audioSource" controls="controls" src={this.state.blobURL}></audio>>
-        <h5 className="center black">{this.state.blobURL}</h5>
+        {/* <audio className="center" ref="audioSource" controls="controls" src={this.state.blobURL}></audio>> */}
         <button onClick={this.toggleRecording} type="button" className={this.state.isRecording ? 'recordbtn recordon center' : 'recordbtn recordoff center'}>
           <MaterialIcon icon="mic_none" size={60} color='#f2f2f2' />
         </button>

@@ -17,13 +17,13 @@ class ChooseGM extends Component {
     setTimeout(() => {
       this.props.changeStatus(1)
       this.props.changeGM(this.state.gm)
-    }, 1000)
+    }, 3000)
   }
   render() {
     return (
-      <div>
-        <h1>{this.state.gm}</h1>
-        <p> is the GM!</p>
+      <div className="choose">
+        <h1 className="header1">{this.state.gm}</h1>
+        <p className="center"> is the dailou this round!</p>
         <img className="gif" src={gm}/>
         {this.changeStatus()}
       </div>

@@ -7,7 +7,7 @@ class ScoreBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      score: [["Desheng", 15],["Caleb", 10], ["Yongkeat", 10], ["Adna", 10]],// props.score, // array
+      score: [["Desheng", 15],["Caleb", 10], ["Yongkeat", 10], ["Adna", 10], ["Crystal", 10]],// props.score, // array
     }
     this.clickHandler = this.clickHandler.bind(this)
   }

@@ -65,9 +65,12 @@ class GmInputAudio extends Component {
     })
     .catch(function (error) {
       console.log('Request failed', error);
+      this.props.changeStatus(3)
     });
 
     console.log("fetch command executed")
+    this.props.changeStatus(3)
+
   }
 
   onData(recordedBlob){

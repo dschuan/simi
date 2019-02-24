@@ -30,7 +30,7 @@ class Choose extends Component {
   componentDidMount() {
     //update answers here
     this.setState({
-        answers: [["De sheng", "When you fell from heaven pain not? blah blah blah"], ["Crystal", "Ai stead mai?"], ["Adna", "I will cook, clean, wash dishes, massage you, give you breakfast in bed, ...., if you go out with me"]],
+        answers: [["De sheng", "Eh, when you fell from heaven pain not?"], ["Crystal", "Ai stead mai?"], ["Adna", "I will cook, clean, wash dishes, massage you, give you breakfast in bed, ...., if you go out with me"], ["Caleb", "I'm too Paiseh to ask a girl out..."], ["Yong Keat", "She's too chio for me"]],
     })
   }
 

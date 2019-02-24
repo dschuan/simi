@@ -12,13 +12,14 @@ class Answer extends Component {
     this.state = {
       blobURL: "http://192.168.43.8:5000/sound/voice.webm",
       /*answer: props.answer;*/
-      answer: "boo!"
+      answer: "Eh, when you fell from heaven pain not?",
+      tempAudio: "/audioTest.m4a",
     }
   }
   changeScreen() {
     setTimeout(() => {
       this.props.changeStatus(5)
-    }, 3000)
+    }, 5000)
   }
   render() {
     return (
@@ -27,11 +28,12 @@ class Answer extends Component {
         <Typing>
           <h2 className='header2'> {this.state.answer} </h2>
         </Typing>
+        {this.changeScreen()}
         <div display='none'>
         <ReactAudioPlayer
-          src={this.state.blobURL}
+          src={this.state.tempAudio}
           className="audio center"
-          ref="audioSource"
+          ref="tempAudio"
           autoPlay
           controls
           onEnded={() => {

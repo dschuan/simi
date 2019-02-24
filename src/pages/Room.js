@@ -25,7 +25,7 @@ class Room extends Component {
 
   componentDidMount() {
     //get user list
-    let names = ['Amy', 'Benedict', 'Cody']
+    let names = ['De Sheng', 'Caleb', 'Yong Keat', 'Adna', 'Crystal']
     //get user name
     const name = sessionStorage.getItem('name')
     this.setState({users: names})

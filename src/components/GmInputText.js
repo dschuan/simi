@@ -37,6 +37,7 @@ class GmInputText extends Component {
 
   }
   render() {
+    
     return (
 
       <div className='background'>

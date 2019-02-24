@@ -38,17 +38,17 @@ class Choose extends Component {
     let buttonAnswers = [];
     for (var i = 0; i < this.state.answers.length; i++){
       buttonAnswers.push(
-        <ToggleButton className='mt-3' type="radio" value={this.state.answers[i][0]}> {this.state.answers[i][1]}</ToggleButton>
+        <ToggleButton checked={false} className='mt-3' type="radio" value={this.state.answers[i][0]}> {this.state.answers[i][1]}</ToggleButton>
       )
     }
 
     return (
       <div className='choose'>
         <h1 className='header1'>What would {this.props.gm} say when asking a girl out?</h1>
-        <ToggleButtonGroup onChange={this.handleSelection} vertical className='choose' name="options">
+        <ToggleButtonGroup value={this.state.selected} onChange={this.handleSelection} vertical className='choose' name="options">
           {buttonAnswers}
         </ToggleButtonGroup>
-        {this.state.answers.length > 0 ? 'An answer is selected liao' : ''}
+        {this.state.selected.length === 0 ? '' : 'An answer is selected liao'}
         <div className='timer'>
           <CountDownTimer timerComplete={this.timerComplete}/>
         </div>
